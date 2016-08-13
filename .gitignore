@@ -4,5 +4,6 @@
 .Ruserdata
 src/*.o
 src/*.so
+!ExpansionsR.so
 src/*.dll
 Read-and-delete-me

@@ -17,4 +17,10 @@ A vector of length \code{prod(sizes)}, the expansion of \code{n}.
 \description{
 Ary-expansion of an integer.
 }
+\examples{
+intToAry(77, c(3,4,7))
+2*1 + 1*3 + 6*(3*4)
+# Cartesian product {0,1}x{0,1}:
+sapply(0:3, function(x) intToAry(x, sizes=c(2,2)))
+}
 
