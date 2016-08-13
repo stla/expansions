@@ -6,6 +6,11 @@
 \usage{
 sumadic(x1, x2, base = 2L)
 }
+\arguments{
+\item{x1, x2}{the two adic integers to be added}
+
+\item{base}{the base of the two adic integers (integer)}
+}
 \description{
 Sum of two adic integers in a given base
 }

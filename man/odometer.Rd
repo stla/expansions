@@ -12,7 +12,9 @@ odometer_iterated(x, n, base = 2L)
 \arguments{
 \item{x}{a sequence of digits in the given base}
 
-\item{base}{the base of the expansion (integer)}
+\item{base}{integer, the base of the expansion}
+
+\item{n}{integer, power of the iteration}
 }
 \value{
 \code{odometer} returns the transformation of \code{x} by the odometer; \code{odometer_iterated} returns the \code{n}-th iterate of the odometer.

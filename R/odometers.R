@@ -13,7 +13,8 @@
 #' @title Odometer
 #' @description The odometer in a given integer base
 #' @param x a sequence of digits in the given base
-#' @param base the base of the expansion (integer)
+#' @param n integer, power of the iteration
+#' @param base integer, the base of the expansion
 #' @return \code{odometer} returns the transformation of \code{x} by the odometer; \code{odometer_iterated} returns the \code{n}-th iterate of the odometer.
 #' @examples
 #' odometer(c(0,1))
@@ -41,6 +42,8 @@ odometer_iterated <- function(x, n, base=2L){
 #' @title Sum of two adic integers
 #' @description Sum of two adic integers in a given base
 #' @export
+#' @param x1,x2 the two adic integers to be added
+#' @param base the base of the two adic integers (integer)
 #' @examples
 #' sumadic(c(0,1), c(1,1))
 #' sumadic(c(0,1), 1)
