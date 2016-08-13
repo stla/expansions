@@ -7,23 +7,23 @@
 
 #' Float expansion between 0 and 1
 #' @description Expansion of a number between 0 and 1 in a given integer base.
-#' @param x the number to be expanded
+#' @param u real number between 0 and 1
 #' @param base the base of the expansion (integer)
-#' @return The digits of the expansion in a vector.
+#' @return The digits of the expansion of \code{u} in a vector.
 #' @export
 #' @useDynLib ExpansionsR
 #' @examples
 #' floatExpand01(0.125)
 #' 0*1/2 + 0*1/2^2 + 1*1/2^3
 #' floatExpand01(1/3+1/3^3, base=3)
-floatExpand01 <- function(x, base=2){
-  if(x<0 || x>1) stop("x must be between 0 and 1")
-  return(.floatExpand01(x, base))
+floatExpand01 <- function(u, base=2){
+  if(u<0 || u>1) stop("u must be between 0 and 1")
+  return(.floatExpand01(u, base))
 }
 
 #' Float expansion
-#' @description Expansion of a real number in a given integer base.
-#' @param x the number to be expanded
+#' @description Expansion of a positive real number in a given integer base.
+#' @param x a nonnegative number
 #' @param base the base of the expansion (integer)
 #' @return A list representing the scientific notation of the expansion; the digits in the first component and the exponent in the second one.
 #' @export
@@ -32,6 +32,7 @@ floatExpand01 <- function(x, base=2){
 #' (1*1/2 + 0*1/2^2 + 1*1/2^3) * 2^1
 floatExpand <- function(x, base=2){
   if(base<2) stop("base must be >1")
+  if(x<0) stop("x must be a nonnegative number")
   return(setNames(.floatExpand(x, base), c("digits", "exponent")))
 }
 

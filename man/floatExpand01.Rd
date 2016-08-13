@@ -4,15 +4,15 @@
 \alias{floatExpand01}
 \title{Float expansion between 0 and 1}
 \usage{
-floatExpand01(x, base = 2)
+floatExpand01(u, base = 2)
 }
 \arguments{
-\item{x}{the number to be expanded}
+\item{u}{real number between 0 and 1}
 
 \item{base}{the base of the expansion (integer)}
 }
 \value{
-The digits of the expansion in a vector.
+The digits of the expansion of \code{u} in a vector.
 }
 \description{
 Expansion of a number between 0 and 1 in a given integer base.

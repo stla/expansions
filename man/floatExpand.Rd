@@ -7,7 +7,7 @@
 floatExpand(x, base = 2)
 }
 \arguments{
-\item{x}{the number to be expanded}
+\item{x}{a nonnegative number}
 
 \item{base}{the base of the expansion (integer)}
 }
@@ -15,7 +15,7 @@ floatExpand(x, base = 2)
 A list representing the scientific notation of the expansion; the digits in the first component and the exponent in the second one.
 }
 \description{
-Expansion of a real number in a given integer base.
+Expansion of a positive real number in a given integer base.
 }
 \examples{
 floatExpand(1.125)
