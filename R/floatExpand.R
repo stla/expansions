@@ -14,7 +14,8 @@
 #' @useDynLib ExpansionsR
 #' @examples
 #' floatExpand01(0.125)
-#' floatExpand01(1/3+1/27, base=3)
+#' 0*1/2 + 0*1/2^2 + 1*1/2^3
+#' floatExpand01(1/3+1/3^3, base=3)
 floatExpand01 <- function(x, base=2){
   if(x<0 || x>1) stop("x must be between 0 and 1")
   return(.floatExpand01(x, base))
