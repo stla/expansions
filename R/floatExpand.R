@@ -31,6 +31,6 @@ floatExpand01 <- function(x, base=2){
 #' (1*1/2 + 0*1/2^2 + 1*1/2^3) * 2^1
 floatExpand <- function(x, base=2){
   if(base<2) stop("base must be >1")
-  return(.floatExpand(x, base))
+  return(setNames(.floatExpand(x, base), c("digits", "exponent")))
 }
 
