@@ -20,6 +20,7 @@
 #' odometer(c(0,1))
 #' odometer(c(1,1))
 #' odometer_iterated(c(0,1), n=2)
+#' odometer_iterated(0, n=13) == intAtBase(13)
 NULL
 
 #' @rdname odometer
