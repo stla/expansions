@@ -12,7 +12,7 @@ intToAry(n, sizes)
 \item{sizes}{the base of the expansion}
 }
 \value{
-A vector of length \code{prod(sizes)}, the expansion of \code{n}.
+A vector of the same length as \code{prod(sizes)}, the expansion of \code{n}.
 }
 \description{
 Ary-expansion of an integer.

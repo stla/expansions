@@ -3,13 +3,16 @@ using namespace Rcpp;
 
 // [[Rcpp::export]]
 IntegerVector rcpp_intToAry(int n, IntegerVector s){
+  // will contain the output:
   IntegerVector epsilon(s.size());
+  // insert 1 at the beginning of s:
   IntegerVector::iterator it;
-  it = s.begin(); // ce truc sert à insérer un 1 au début de sizes
+  it = s.begin();
   it = s.insert ( it , 1 );
-  int G[s.size()]; // ceci je ne peux pas le retourner avec wrap
-  // ceci ne marche pas pour la suite : std::vector<int> G (s.size());
-  std::partial_sum (s.begin(), s.end(), G, std::multiplies<int>()); // cumprod
+  // vector of cumulative products:
+  int G[s.size()];
+  std::partial_sum (s.begin(), s.end(), G, std::multiplies<int>());
+  // greedy algorithm:
   int k;
   while(n>0){
     k=1;

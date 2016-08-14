@@ -47,8 +47,7 @@ odometer_iterated <- function(x, n, base=2L){
 #' @param base the base of the two adic integers (integer)
 #' @examples
 #' sumadic(c(0,1), c(1,1))
-#' sumadic(c(0,1), 1)
-#' odometer(c(0,1))
+#' sumadic(c(0,1), 1) == odometer(c(0,1))
 sumadic <- function(x1, x2, base=2L){
   if(base<2) stop("base must be an integer >1")
   if(any(!x1 %in% 0:(as.integer(base-1L)))) stop(sprintf("x1 is not an expansion in base %s", as.integer(base)))

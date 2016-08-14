@@ -16,7 +16,6 @@ Sum of two adic integers in a given base
 }
 \examples{
 sumadic(c(0,1), c(1,1))
-sumadic(c(0,1), 1)
-odometer(c(0,1))
+sumadic(c(0,1), 1) == odometer(c(0,1))
 }
 

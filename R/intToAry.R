@@ -6,7 +6,7 @@
 #' @export
 #' @param n integer to be expanded
 #' @param sizes the base of the expansion
-#' @return A vector of length \code{prod(sizes)}, the expansion of \code{n}.
+#' @return A vector of the same length as \code{prod(sizes)}, the expansion of \code{n}.
 #' @examples
 #' intToAry(77, c(3,4,7))
 #' 2*1 + 1*3 + 6*(3*4)

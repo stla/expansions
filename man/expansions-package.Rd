@@ -3,32 +3,17 @@
 \alias{expansions}
 \docType{package}
 \title{
-  A short title line describing what the package does
+  Expansions of integer and real numbers
 }
 \description{
-  A more detailed description of what the package does. A length
-  of about one to five lines is recommended.
+  Expansions of integer and real numbers in an integer base, odometers and adic addition
 }
 \details{
-  This section should provide a more detailed overview of how to use the
-  package, including the most important functions.
+  See the examples.
 }
 \author{
-Your Name, email optional.
+Stéphane Laurent.
 
-Maintainer: Your Name <your@email.com>
-}
-\references{
-  This optional section can contain literature or other references for
-  background information.
+Maintainer: Stéphane Laurent <laurent_step@yahoo.fr>
 }
 \keyword{ package }
-\seealso{
-  Optional links to other man pages
-}
-\examples{
-  \dontrun{
-     ## Optional simple examples of the most important functions
-     ## These can be in \dontrun{} and \donttest{} blocks.
-  }
-}
