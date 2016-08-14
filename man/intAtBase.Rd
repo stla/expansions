@@ -12,10 +12,10 @@ intAtBase(n, base = 2L)
 \item{base}{the base of the expansion}
 }
 \value{
-the expansion of \code{n} in a vector
+The expansion of \code{n} in a vector.
 }
 \description{
-Expansion of a positive integer in a given base
+Expansion of a positive integer in an integer base
 }
 \examples{
 intAtBase(41, base=3)

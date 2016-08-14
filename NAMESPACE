@@ -3,6 +3,8 @@
 export(floatExpand)
 export(floatExpand01)
 export(intAtBase)
+export(intAtBaseFib)
+export(intAtBasePower)
 export(intToAry)
 export(odometer)
 export(odometer_iterated)
