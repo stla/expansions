@@ -26,7 +26,7 @@ NULL
 #' @export
 odometer <- function(x, base=2L){
   if(base<2) stop("base must be an integer >1")
-  if(any(!x %in% 0:(as.integer(base-1L)))) stop("x is not an expansion in base %s", as.integer(base))
+  if(any(!x %in% 0:(as.integer(base-1L)))) stop(sprintf("x is not an expansion in base %s", as.integer(base)))
   return(.odometer(x, base))
 }
 
@@ -34,7 +34,7 @@ odometer <- function(x, base=2L){
 #' @export
 odometer_iterated <- function(x, n, base=2L){
   if(base<2) stop("base must be an integer >1")
-  if(any(!x %in% 0:(as.integer(base-1L)))) stop("x is not an expansion in base %s", as.integer(base))
+  if(any(!x %in% 0:(as.integer(base-1L)))) stop(sprintf("x is not an expansion in base %s", as.integer(base)))
   if(n<0) stop("n must be a nonnegative integer")
   return(.odometer_iterated(x, n, base))
 }
@@ -50,7 +50,7 @@ odometer_iterated <- function(x, n, base=2L){
 #' odometer(c(0,1))
 sumadic <- function(x1, x2, base=2L){
   if(base<2) stop("base must be an integer >1")
-  if(any(!x1 %in% 0:(as.integer(base-1L)))) stop("x is not an expansion in base %s", as.integer(base))
-  if(any(!x2 %in% 0:(as.integer(base-1L)))) stop("x is not an expansion in base %s", as.integer(base))
+  if(any(!x1 %in% 0:(as.integer(base-1L)))) stop(sprintf("x1 is not an expansion in base %s", as.integer(base)))
+  if(any(!x2 %in% 0:(as.integer(base-1L)))) stop(sprintf("x2 is not an expansion in base %s", as.integer(base)))
   return(.sumadic(x1, x2, base))
 }
