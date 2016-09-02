@@ -2,12 +2,18 @@
 % Please edit documentation in R/odometers.R
 \name{odometer}
 \alias{odometer}
+\alias{odometerBW}
+\alias{odometerBW_iterated}
 \alias{odometer_iterated}
 \title{Odometer}
 \usage{
 odometer(x, base = 2L)
 
 odometer_iterated(x, n, base = 2L)
+
+odometerBW(x, base = 2L)
+
+odometerBW_iterated(x, n, base = 2L)
 }
 \arguments{
 \item{x}{a sequence of digits in the given base}
@@ -17,7 +23,7 @@ odometer_iterated(x, n, base = 2L)
 \item{n}{integer, power of the iteration}
 }
 \value{
-\code{odometer} returns the transformation of \code{x} by the odometer; \code{odometer_iterated} returns the \code{n}-th iterate of the odometer.
+\code{odometer} returns the transformation of \code{x} by the odometer; \code{odometer_iterated} returns the \code{n}-th iterate of the odometer; \code{odometerBW} returns the transformation of \code{x} by the backward odometer; \code{odometerBW_iterated} returns the \code{n}-th iterate of the backward odometer.
 }
 \description{
 The odometer in a given integer base
@@ -25,7 +31,9 @@ The odometer in a given integer base
 \examples{
 odometer(c(0,1))
 odometer(c(1,1))
+odometerBW(odometer(c(0,1))) == c(0,1)
 odometer_iterated(c(0,1), n=2)
 odometer_iterated(0, n=13) == intAtBase(13)
+odometerBW_iterated(intAtBase(13), n=13) == 0
 }
 
