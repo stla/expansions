@@ -53,7 +53,7 @@ odometer_iterated <- function(x, n, base=2L){
 odometerBW <- function(x, base=2L){
   if(base<2) stop("base must be an integer >1")
   if(any(!x %in% 0:(as.integer(base-1L)))) stop(sprintf("x is not an expansion in base %s", as.integer(base)))
-  if(all(x==0)) stop("The backward image of 0 is the infinite sequence (1,1,...)")
+  if(all(x==0)) stop(sprintf("The backward image of 0 is the infinite sequence (%s,%s,...)", base, base))
   return(.odometerBW(x, base))
 }
 
