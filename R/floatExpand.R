@@ -28,6 +28,7 @@ floatExpand01 <- function(u, base=2){
 #' @param base the base of the expansion (integer)
 #' @return A list representing the scientific notation of the expansion; the digits in the first component and the exponent in the second one.
 #' @export
+#' @importFrom stats setNames
 #' @seealso \code{\link{floatExpand01}} to expand a number between 0 and 1.
 #' @examples
 #' floatExpand(1.125)
