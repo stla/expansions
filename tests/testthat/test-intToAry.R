@@ -8,4 +8,8 @@ test_that("intToAry", {
   #
   sizes <- c(3,4,5)
   expect_error(intToAry(prod(sizes), sizes), "n must be nonnegative and strictly lower than")
+  #
+  expect_equal(t(expand.grid(c(0,1),c(0,1))),
+               sapply(0:3, function(x) intToAry(x, sizes=c(2,2))),
+               check.attributes=FALSE)
 })

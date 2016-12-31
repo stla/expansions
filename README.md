@@ -3,11 +3,11 @@ Expansions of integer and real numbers, and odometers.
 
 ## Installation
 
-To install on Windows:
+To install on Windows (64-bit only):
 
 ```r
 devtools::find_rtools()
-devtools::install_github('stla/expansions')
+devtools::install_github('stla/expansions', args="--no-multiarch")
 ```
 
 On Linux:
