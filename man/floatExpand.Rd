@@ -19,6 +19,9 @@ Expansion of a positive real number in a given integer base.
 }
 \examples{
 floatExpand(1.125)
-(1*1/2 + 0*1/2^2 + 1*1/2^3) * 2^1
+(1*1/2 + 0*1/2^2 + 0*1/2^3 + + 1*1/2^4) * 2^1
+}
+\seealso{
+\code{\link{floatExpand01}} to expand a number between 0 and 1.
 }
 

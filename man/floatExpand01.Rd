@@ -19,7 +19,10 @@ Expansion of a number between 0 and 1 in a given integer base.
 }
 \examples{
 floatExpand01(0.125)
-0*1/2 + 0*1/2^2 + 1*1/2^3
+0*1/2 + 0*1/2^2 + 0*1/2^3 + 1*1/2^4
 floatExpand01(1/3+1/3^3, base=3)
+}
+\seealso{
+\code{\link{floatExpand}} to expand a positive number.
 }
 
