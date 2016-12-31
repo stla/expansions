@@ -3,7 +3,14 @@ Expansions of integer and real numbers, and odometers.
 
 ## Installation
 
-The package works on Linux only. To install:
+To install on Windows:
+
+```r
+devtools::find_rtools()
+devtools::install_github('stla/expansions')
+```
+
+On Linux:
 
 ```r
 devtools::install_github('stla/expansions')
