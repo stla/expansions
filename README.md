@@ -7,13 +7,13 @@ To install on Windows (64-bit only):
 
 ```r
 devtools::find_rtools()
-devtools::install_github('stla/expansions', args="--no-multiarch")
+devtools::install_github('stla/expansions', args="--no-multiarch", build_vignettes=TRUE)
 ```
 
 On Linux:
 
 ```r
-devtools::install_github('stla/expansions')
+devtools::install_github('stla/expansions', build_vignettes=TRUE)
 ```
 
 ## Examples 
