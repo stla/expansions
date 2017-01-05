@@ -10,7 +10,7 @@ vignette: >
 ---
 
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, purl=FALSE}
 library(expansions)
 knitr::opts_chunk$set(echo = TRUE, collapse=TRUE)
 ```
@@ -56,7 +56,8 @@ sum(digits * 3^(seq_along(digits)-1)) == 2^100
 The `intAtBaseFib` function returns the expansion of a Fibonacci number given by its index. For example, the $6$-th Fibonacci number is $8$:
 
 ```{r}
-identical(intAtBaseFib(6, base=3), intAtBase(8, base=3))
+intAtBaseFib(6, base=3)
+intAtBase(8, base=3)
 ```
 
 The $50$-th Fibonacci number is $12586269025$:
@@ -87,6 +88,9 @@ intToAry(83, sizes=c(3,4,7))
 intToAry(84, sizes=c(3,4,7))
 ```
 
+
+
+![](ary.png)
 
 As an illustration, the `intToAry` function allows to get a Cartesian product of sets:
 
@@ -159,7 +163,7 @@ identical(sumadic(c(0,1), 1, base=2), odometer(c(0,1), base=2))
 ```
 
 
-```{r}
+```{r, purl=FALSE, include=FALSE}
 knitr::knit_exit()
 ```
 
