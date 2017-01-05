@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 IntegerVector rcpp_intToAry(int n, IntegerVector s){
   // will contain the output:

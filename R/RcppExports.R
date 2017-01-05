@@ -5,3 +5,7 @@ rcpp_intToAry <- function(n, s) {
     .Call('expansions_rcpp_intToAry', PACKAGE = 'expansions', n, s)
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('expansions_RcppExport_registerCCallable', PACKAGE = 'expansions')
+})

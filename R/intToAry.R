@@ -2,7 +2,7 @@
 #' Integer to ary-expansion
 #' @description Ary-expansion of an integer.
 #' @useDynLib expansions
-#' @importFrom Rcpp evalCpp
+#' @importFrom Rcpp evalCpp sourceCpp
 #' @export
 #' @param n integer to be expanded
 #' @param sizes the base of the expansion
