@@ -7,3 +7,5 @@ src/*.so
 src/*.dll
 Read-and-delete-me
 inst/doc
+inst/extdata/*
+!inst/extdata/*.tex

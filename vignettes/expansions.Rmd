@@ -73,15 +73,31 @@ sum(digits * 3^(seq_along(digits)-1))
 
 The `intToAry` function performs the [Cantor expansion](http://stla.github.io/stlapblog/posts/Greedy.html) of an integer. 
 
+For example, the $(3,4,7)$-ary expansion of $34$: 
+
 ```{r}
-# (3,4,7)-ary expansion of 43:
-intToAry(43, sizes=c(3,4,7))
-1*1 + 2*3 + 3*(3*4)
+intToAry(34, sizes=c(3,4,7))
 ```
 
-Note that the last integer of the `sizes` vector is not seemingly involved in the development $d_1 \times 1 + d_2 \times 3 + d_3 \times (3 \times 4)$. 
+This means that
+$$
+34 = \color{red}{1} \times 1 + \color{red}{3} \times 3 + \color{red}{2} \times (3 \times 4).
+$$
+
+```{r}
+1*1 + 3*3 + 2*(3*4)
+```
+
+Each $(3,4,7)$-ary expansion of an integer corresponds to a path on the following graph:
+
+![](ary.png)
+
+There are $84$ paths on the above graph. That means that the $(3,4,7)$-ary expansion 
+is possible for integers from $0$ to $83$.
+
+The last integer of the `sizes` vector is not seemingly involved in the development $d_1 \times 1 + d_2 \times 3 + d_3 \times (3 \times 4)$. 
 Actually it is: the digits satisfy $d_1 < 3$, $d_2 < 4$ and $d_3 < 7$. 
-Consequently the maximal integer allowing a $(3,4,7)$-ary expansion is $\color{red}{2}\times 1 +\color{red}{3}\times 3+\color{red}{6}\times(3\times 4)=83$:
+Thus, indeed, the maximal integer allowing a $(3,4,7)$-ary expansion is $\color{red}{2}\times 1 +\color{red}{3}\times 3+\color{red}{6}\times(3\times 4)=83$:
 
 ```{r, error=TRUE}
 intToAry(83, sizes=c(3,4,7))
@@ -89,15 +105,12 @@ intToAry(84, sizes=c(3,4,7))
 ```
 
 
-
-![](ary.png)
-
 As an illustration, the `intToAry` function allows to get a Cartesian product of sets:
 
 ```{r}
-# Cartesian product {0,1,2}x{0,1,2}:
-sapply(0:8, function(x) intToAry(x, sizes=c(3,3)))
-t(expand.grid(c(0,1,2),c(0,1,2)))
+# Cartesian product {0,1,2}x{0,1,2,3}:
+sapply(0:11, function(x) intToAry(x, sizes=c(3,4)))
+t(expand.grid(c(0,1,2), c(0,1,2,3)))
 ```
 
 This function is implemented with `Rcpp` ([source code](https://github.com/stla/expansions/blob/master/src/rcpp_intToAry.cpp)), and it is fast. 
@@ -129,7 +142,8 @@ For example:
 
 ```{r}
 floatExpand(1.125, base=2)
-(1*1/2 + 0*1/2^2 + 0*1/2^3 + 1*1/2^4) * 2^1
+# check:
+1.125 == (1*1/2 + 0*1/2^2 + 0*1/2^3 + 1*1/2^4) * 2^1
 ```
 
 
@@ -160,6 +174,30 @@ The `expansions` package also provides the function `sumadic` to perform the sum
 ```{r}
 sumadic(c(0,1), c(1,1,1), base=2)
 identical(sumadic(c(0,1), 1, base=2), odometer(c(0,1), base=2))
+```
+
+The function `odometer_iterated` iterates the `odometer` function:
+
+```{r}
+d <- c(1,0,2)
+b <- 3
+identical(odometer(odometer(d, base=b), base=b), odometer_iterated(d, n=2, base=b))
+```
+
+Note these two ways to get the same result:
+
+```{r}
+n <- 13
+odometer_iterated(d, n=n, base=b)
+sumadic(d, intAtBase(n, base=b), base=b)
+```
+
+The second one is faster:
+
+```{r}
+n <- 2000000
+system.time(odometer_iterated(d, n=n, base=b))
+system.time(sumadic(d, intAtBase(n, base=b), base=b))
 ```
 
 
