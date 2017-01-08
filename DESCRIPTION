@@ -1,14 +1,16 @@
 Package: expansions
 Type: Package
 Title: Expansions of integer and real numbers
-Version: 1.1
-Date: 2017-07-01
+Version: 1.2
+Date: 2017-08-01
 Author: Stéphane Laurent
 Maintainer: Stéphane Laurent <laurent_step@yahoo.com>
 Description: Expansions of integer and real numbers, and odometers.
 License: GPL (>= 2)
 Imports:
-    Rcpp (>= 0.12.6)
+    Rcpp (>= 0.11.5)
+Depends:
+    R (>= 3.0.0)
 LinkingTo: Rcpp
 RoxygenNote: 5.0.1
 Encoding: UTF-8
